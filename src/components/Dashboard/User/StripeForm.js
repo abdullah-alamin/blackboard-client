@@ -39,7 +39,7 @@ const CheckoutForm = ({course}) => {
     } else {
       // console.log('[PaymentMethod]', paymentMethod);
       const dataToSend= {...formValues, stripeId: paymentMethod.id,course: course, userEmail: email,status: 'pending'};
-      fetch('http://localhost:3001/enroll', {
+      fetch('https://vast-bastion-90682.herokuapp.com/enroll', {
         method: "POST",
         headers: {'content-type':'application/json'},
         body: JSON.stringify(dataToSend)

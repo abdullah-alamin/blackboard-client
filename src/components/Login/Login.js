@@ -10,7 +10,7 @@ function Login() {
     const {userToken,setUserToken}= useContext(UserContext);
     let history = useHistory();
     let location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+    let { from } = location.state || { from: { pathname: "/dashboard" } };
 
     const handleSignIn= ()=> {
         const provider = new firebase.auth.GoogleAuthProvider();

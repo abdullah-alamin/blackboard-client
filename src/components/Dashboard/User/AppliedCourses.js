@@ -7,10 +7,13 @@ function AppliedCourses() {
     const token= sessionStorage.getItem('token');
     const {email}= jwtDecode(token);
     useEffect(()=> {
-        fetch('http://localhost:3001/myCourses?email='+email)
+        fetch('https://vast-bastion-90682.herokuapp.com/myCourses?email='+email)
         .then(res=> res.json())
         .then(data=> setCourses(data))
-        .catch(err=> console.log(err))
+        .catch(err=> console.log(err));
+        return () => {
+            setCourses([]);
+          };
     }, [email])
     return (
         <div>

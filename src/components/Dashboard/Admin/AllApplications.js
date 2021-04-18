@@ -5,14 +5,14 @@ function AllApplications() {
     
     const handleStatus= (e,_id)=> {
         const status= e.target.value;
-        fetch('http://localhost:3001/updateStatus',{
+        fetch('https://vast-bastion-90682.herokuapp.com/updateStatus',{
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({status,_id})
         })
     }
     useEffect(()=> {
-        fetch('http://localhost:3001/allEnrollments')
+        fetch('https://vast-bastion-90682.herokuapp.com/allEnrollments')
         .then(res=> res.json())
         .then(data=> setEnrolls(data))
         .catch(err=> console.log(err))

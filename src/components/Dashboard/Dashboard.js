@@ -15,7 +15,7 @@ function Dashboard() {
     const {email}= jwtDecode(token);
     const [isAdmin, setIsAdmin]= useState(false);
     useEffect(()=> {
-        fetch('http://localhost:3001/checkAdmin?email='+email)
+        fetch('https://vast-bastion-90682.herokuapp.com/checkAdmin?email='+email)
         .then(res=> res.json())
         .then(suc=> setIsAdmin(suc))
         .catch(err=> console.log(err))

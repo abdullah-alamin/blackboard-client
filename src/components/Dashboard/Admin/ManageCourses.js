@@ -6,14 +6,14 @@ function ManageCourses() {
     const [courses, setCourses]= useState([]);
     const [deleted, setDeleted]= useState(false);
     useEffect(()=> {
-        fetch('http://localhost:3001/allCourses')
+        fetch('https://vast-bastion-90682.herokuapp.com/allCourses')
         .then(res=> res.json())
         .then(data=> setCourses(data))
         .catch(err=> console.log(err))
     },[deleted]);
 
     const handleDelete= (_id)=> {
-        fetch('http://localhost:3001/deleteCourse?_id='+_id, {
+        fetch('https://vast-bastion-90682.herokuapp.com/deleteCourse?_id='+_id, {
             method: 'DELETE'
         } )
         .then(res=> res.json())

@@ -4,7 +4,7 @@ import Course from './Course'
 function Courses() {
     const [courses, setCourses]= useState([]);
     useEffect(()=> {
-        fetch('http://localhost:3001/allCourses')
+        fetch('https://vast-bastion-90682.herokuapp.com/allCourses')
         .then(res=> res.json())
         .then(data=> setCourses(data))
         .catch(err=> console.log(err))

@@ -23,7 +23,7 @@ function AddCourse() {
         const {title, description, instructor, level, price, number}= data;
         if(imgURL){
             const dataToServer= {title, description, instructor, level, price,imgURL,number};
-            fetch('http://localhost:3001/addCourse', {
+            fetch('https://vast-bastion-90682.herokuapp.com/addCourse', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

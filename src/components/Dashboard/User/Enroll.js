@@ -10,7 +10,7 @@ function Enroll() {
     const {_id}= useParams();
     console.log(_id);
     useEffect(()=> {
-        fetch('http://localhost:3001/singleCourse?_id='+_id)
+        fetch('https://vast-bastion-90682.herokuapp.com/singleCourse?_id='+_id)
         .then(res=> res.json())
         .then(data=> setCourse(data))
         .catch(err=> console.log(err))
